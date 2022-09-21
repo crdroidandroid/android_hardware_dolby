@@ -40,6 +40,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libstagefright_foundation-v33
 
+# Init
+PRODUCT_PACKAGES += \
+    init.dolby.rc
+
 # Overlays    
 PRODUCT_PACKAGES += \
     DolbyFrameworksResCommon
