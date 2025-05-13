@@ -10,7 +10,7 @@
                                All rights reserved.
 
 -->
-<manifest version="1.0" type="device">
+<manifest version="2.0" type="device" target-level="6">
     <hal format="hidl">
         <name>android.hardware.media.c2</name>
         <transport>hwbinder</transport>
