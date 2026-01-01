@@ -66,3 +66,9 @@ PRODUCT_PACKAGES += \
     libswgamedap \
     libswvqe 
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(DOLBY_PATH)/overlay
+
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(DOLBY_PATH)/configs/vintf/device_framework_matrix.xml
