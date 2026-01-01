@@ -41,7 +41,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # DolbyManager
 PRODUCT_PACKAGES += \
-    DolbyManager
+    DolbyAtmos
 
 # Proprietary-files
 PRODUCT_COPY_FILES += \
