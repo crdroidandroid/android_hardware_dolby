@@ -64,7 +64,8 @@ PRODUCT_PACKAGES += \
     libdlbvol \
     libswdap \
     libswgamedap \
-    libswvqe 
+    libswvqe \
+    libmisoundfx
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
