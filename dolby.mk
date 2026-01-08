@@ -98,12 +98,12 @@ PRODUCT_PACKAGES += \
     RemovePackagesDolby
 
 # DSP Volume Synchronizer
-PRODUCT_PACKAGES += \
-    DSPVolumeSynchronizer
+#PRODUCT_PACKAGES += \
+#    DSPVolumeSynchronizer
 
 # DolbyManager
 PRODUCT_PACKAGES += \
-    DolbyManager
+    LunarisDolby
 
 # Dolby Proprietary blobs
 PRODUCT_COPY_FILES += \
