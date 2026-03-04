@@ -158,6 +158,47 @@ dex_import {
 }
 
 cc_prebuilt_library_shared {
+    name: "libdapparamstorage-dolby",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libdapparamstorage-dolby.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libdapparamstorage-dolby.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libdapparamstorage",
     owner: "motorola",
     strip: {
@@ -244,7 +285,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.dolby.hardware.dms@2.0",
+    name: "libstagefright_foundation-dolby",
     owner: "motorola",
     strip: {
         none: true,
@@ -252,13 +293,13 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: {
             srcs: [
-                "proprietary/vendor/lib/vendor.dolby.hardware.dms@2.0.so",
+                "proprietary/vendor/lib/libstagefright_foundation-dolby.so",
             ],
             shared_libs: [
-                "libhidlbase",
-                "liblog",
+                "libbinder",
                 "libutils",
                 "libcutils",
+                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -267,13 +308,13 @@ cc_prebuilt_library_shared {
         },
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.0.so",
+                "proprietary/vendor/lib64/libstagefright_foundation-dolby.so",
             ],
             shared_libs: [
-                "libhidlbase",
-                "liblog",
+                "libbinder",
                 "libutils",
                 "libcutils",
+                "liblog",
                 "libc++",
                 "libc",
                 "libm",
@@ -283,126 +324,6 @@ cc_prebuilt_library_shared {
     },
     compile_multilib: "both",
     prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libdlbdsservice",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libdlbdsservice.so",
-            ],
-            shared_libs: [
-                "libutils",
-                "libstagefright_foundation-v33",
-                "liblog",
-                "libxml2",
-                "libcrypto",
-                "libdapparamstorage",
-                "libsqlite",
-                "libhidlbase",
-                "vendor.dolby.hardware.dms@2.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "liboem_specific",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/liboem_specific.so",
-            ],
-            shared_libs: [
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.dolby.hardware.dms@2.0-impl",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "libutils",
-                "liblog",
-                "libdapparamstorage",
-                "libdlbdsservice",
-                "vendor.dolby.hardware.dms@2.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "vendor.dolby.hardware.dms@2.0-service",
-    owner: "motorola",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
-                "libhidlbase",
-                "libdapparamstorage",
-                "libdlbdsservice",
-                "vendor.dolby.hardware.dms@2.0",
-                "vendor.dolby.hardware.dms@2.0-impl",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    relative_install_path: "hw",
     soc_specific: true,
 }
 
@@ -562,7 +483,7 @@ cc_prebuilt_library_shared {
 
 cc_prebuilt_library_shared {
     name: "libswvqe",
-    owner: "motorola",
+    owner: "sony",
     strip: {
         none: true,
     },
@@ -611,90 +532,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libdapparamstorage-dolby",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libdapparamstorage-dolby.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libdapparamstorage-dolby.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libstagefright_foundation-dolby",
-    owner: "motorola",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libstagefright_foundation-dolby.so",
-            ],
-            shared_libs: [
-                "libbinder",
-                "libutils",
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libstagefright_foundation-dolby.so",
-            ],
-            shared_libs: [
-                "libbinder",
-                "libutils",
-                "libcutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.dolby.hardware.dms@2.0-dolby",
     owner: "motorola",
     strip: {
@@ -719,6 +556,49 @@ cc_prebuilt_library_shared {
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.0-dolby.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.dolby.hardware.dms@2.0",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vendor.dolby.hardware.dms@2.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.0.so",
             ],
             shared_libs: [
                 "libhidlbase",
@@ -900,6 +780,126 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
+cc_prebuilt_library_shared {
+    name: "libdlbdsservice",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libdlbdsservice.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libstagefright_foundation-v33",
+                "liblog",
+                "libxml2",
+                "libcrypto",
+                "libdapparamstorage",
+                "libsqlite",
+                "libhidlbase",
+                "vendor.dolby.hardware.dms@2.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "liboem_specific",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/liboem_specific.so",
+            ],
+            shared_libs: [
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.dolby.hardware.dms@2.0-impl",
+    owner: "motorola",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "libutils",
+                "liblog",
+                "libdapparamstorage",
+                "libdlbdsservice",
+                "vendor.dolby.hardware.dms@2.0",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "vendor.dolby.hardware.dms@2.0-service",
+    owner: "motorola",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libhidlbase",
+                "libdapparamstorage",
+                "libdlbdsservice",
+                "vendor.dolby.hardware.dms@2.0",
+                "vendor.dolby.hardware.dms@2.0-impl",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
 cc_prebuilt_binary {
     name: "vendor.dolby.media.c2@1.0-service",
     owner: "motorola",
@@ -909,15 +909,16 @@ cc_prebuilt_binary {
                 "proprietary/vendor/bin/hw/vendor.dolby.media.c2@1.0-service",
             ],
             shared_libs: [
-                "libshim_dolby",
                 "libbase",
                 "liblog",
                 "libcodec2",
                 "libutils",
                 "android.hardware.media.c2@1.0",
                 "android.hardware.media.c2@1.1",
+                "android.hardware.media.c2@1.2",
                 "libcodec2_hidl@1.0",
                 "libcodec2_hidl@1.1",
+                "libcodec2_hidl@1.2",
                 "libcodec2_vndk",
                 "libhidlbase",
                 "libavservices_minijail_vendor",

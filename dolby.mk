@@ -48,9 +48,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libstagefright_foundation-v33
 
-PRODUCT_PACKAGES += \
-    libshim_dolby
-
 # Init
 PRODUCT_PACKAGES += \
     init.dolby.rc
@@ -139,35 +136,27 @@ PRODUCT_COPY_FILES += \
 # Dolby Proprietary blobs
 PRODUCT_COPY_FILES += \
     $(DOLBY_PATH)/proprietary/vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.dolby.hardware.dms@2.0-service.rc \
-
-PRODUCT_PACKAGES += \
-    libdapparamstorage \
-    vendor.dolby.hardware.dms@2.0 \
-    libdlbdsservice \
-    vendor.dolby.hardware.dms@2.0-impl \
-    vendor.dolby.hardware.dms@2.0-service \
-    libdlbpreg \
-    liboem_specific
-
-# Dolby SoundFX
-PRODUCT_PACKAGES += \
-    libswdap \
-    libswgamedap \
-    libswvqe \
-    libdlbvol
-
-# Codec2 (Dolby)
-PRODUCT_COPY_FILES += \
     $(DOLBY_PATH)/proprietary/vendor/etc/init/vendor.dolby.media.c2@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.dolby.media.c2@1.0-service.rc
 
 PRODUCT_PACKAGES += \
     libdapparamstorage-dolby \
+    libdapparamstorage \
+    libdlbpreg \
     libstagefright_foundation-dolby \
+    libdlbvol \
+    libswdap \
+    libswgamedap \
+    libswvqe \
     vendor.dolby.hardware.dms@2.0-dolby \
+    vendor.dolby.hardware.dms@2.0 \
     libcodec2_soft_ac4dec \
     libcodec2_soft_ddpdec \
     libcodec2_soft_dolby \
     libcodec2_store_dolby \
     libdeccfg \
+    libdlbdsservice \
+    liboem_specific \
+    vendor.dolby.hardware.dms@2.0-impl \
+    vendor.dolby.hardware.dms@2.0-service \
     vendor.dolby.media.c2@1.0-service
 
