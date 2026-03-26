@@ -45,7 +45,7 @@ At the end an example commit to properly implement it in your device tree could 
 
 [**1**] https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/e2333c94444b2646810cca39926f2df6bb95443c
 
-[**2**] https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/07b4e9115a6346b3bbf34ba6cf96909f91f40a30
+[**2 For Spatial Audio**] https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/035849721cacf5746bc554407ae2ae7c12edd865
  
 #### Tip pick anyone for Reference:
           https://dumps.tadiphone.dev/dumps/xiaomi/vili/-/blob/missi_phone_global-user-14-UKQ1.231207.002-V816.0.5.0.UKDMIXM-release-keys/aosp-device-tree/proprietary-files.txt#L2072
