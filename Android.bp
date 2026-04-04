@@ -34,6 +34,45 @@ prebuilt_etc_xml {
 }
 
 cc_prebuilt_library_shared {
+    name: "aoc_audio_stereo_spatializer",
+    owner: "google",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/aoc_audio_stereo_spatializer.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/aoc_audio_stereo_spatializer.so",
+            ],
+            shared_libs: [
+                "libbase",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libspatialaudio",
     owner: "google",
     strip: {

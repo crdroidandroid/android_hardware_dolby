@@ -75,6 +75,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Spatial Audio Proprietary blobs
 PRODUCT_PACKAGES += \
+    aoc_audio_stereo_spatializer \
     libspatialaudio
 
 # Media (C2)
