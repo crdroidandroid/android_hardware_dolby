@@ -46,6 +46,10 @@ At the end an example commit to properly implement it in your device tree could 
 [**1**] https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/e2333c94444b2646810cca39926f2df6bb95443c
 
 [**2 For Spatial Audio**] https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/035849721cacf5746bc554407ae2ae7c12edd865
+
+[**3 Enable Dolby Vision**] https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/97e6c84e3e2390c7fa8acecc3cdedd70b5aed07d
+
+[**4 Disable Dolby Vision**] https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/41411ab3e6caabe8a304b03d6badcd8bf2211adb
  
 #### Tip pick anyone for Reference:
           https://dumps.tadiphone.dev/dumps/xiaomi/vili/-/blob/missi_phone_global-user-14-UKQ1.231207.002-V816.0.5.0.UKDMIXM-release-keys/aosp-device-tree/proprietary-files.txt#L2072
