@@ -158,7 +158,6 @@ PRODUCT_PACKAGES += \
     c2.dolby.client \
     c2.dolby.egl \
     c2.dolby.hevc.dec \
-    c2.dolby.hevc.enc \
     c2.dolby.hevc.sec.dec \
     c2.dolby.store \
     libdolbyottcameracontrol \
