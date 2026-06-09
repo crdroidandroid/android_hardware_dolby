@@ -107,6 +107,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     DSPVolumeSynchronizer
 
+ifeq ($(TARGET_INCLUDES_OEM_App),true)
 # OnePlus DaxUI and daxService
 PRODUCT_PACKAGES += \
     daxService \
@@ -119,6 +120,7 @@ PRODUCT_COPY_FILES += \
     $(DOLBY_PATH)/proprietary/system_ext/etc/sysconfig/config-com.dolby.daxappui.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/config-com.dolby.daxappui.xml \
     $(DOLBY_PATH)/proprietary/system_ext/etc/sysconfig/config-com.dolby.daxservice.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/config-com.dolby.daxservice.xml \
     $(DOLBY_PATH)/proprietary/system_ext/etc/sysconfig/hiddenapi-com.dolby.daxservice.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/hiddenapi-com.dolby.daxservice.xml
+endif
 
 # Dolby Proprietary blobs
 PRODUCT_COPY_FILES += \
@@ -147,6 +149,7 @@ PRODUCT_PACKAGES += \
     vendor.dolby.hardware.dms@2.0-service \
     vendor.dolby.media.c2@1.0-service
 
+ifeq ($(TARGET_INCLUDES_DolbyVision),true)
 # Dolby vision Proprietary blobs
 PRODUCT_COPY_FILES += \
     $(DOLBY_PATH)/proprietary/vendor/etc/dolby_vision.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/dolby_vision.cfg \
@@ -179,4 +182,5 @@ PRODUCT_PACKAGES += \
 # Shim
 PRODUCT_PACKAGES += \
     libcodec2_hidl_shim.vendor
+endif
 
