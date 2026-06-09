@@ -7,3 +7,4 @@
 
 # Dolby vision
 /vendor/bin/hw/dolbycodec2                                                u:object_r:mediacodec_exec:s0
+/vendor/bin/hw/dvs-hal-service                                            u:object_r:hal_dvs_default_exec:s0
