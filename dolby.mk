@@ -108,6 +108,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     DSPVolumeSynchronizer
 
+ifeq ($(TARGET_INCLUDES_OEM_App),true)
 # Motorola bloatwares
 PRODUCT_PACKAGES += \
     MotoSignatureApp \
@@ -135,6 +136,7 @@ PRODUCT_COPY_FILES += \
     $(DOLBY_PATH)/proprietary/system_ext/etc/sysconfig/config-com.motorola.android.providers.settings.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/config-com.motorola.android.providers.settings.xml \
     $(DOLBY_PATH)/proprietary/system_ext/etc/sysconfig/config-com.motorola.dolby.dolbyui.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/config-com.motorola.dolby.dolbyui.xml \
     $(DOLBY_PATH)/proprietary/system_ext/etc/sysconfig/config-com.motorola.motosignature.app.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/config-com.motorola.motosignature.app.xml
+endif
 
 # Dolby Proprietary blobs
 PRODUCT_COPY_FILES += \
@@ -163,6 +165,7 @@ PRODUCT_PACKAGES += \
     vendor.dolby.hardware.dms@2.0-service \
     vendor.dolby.media.c2@1.0-service
 
+ifeq ($(TARGET_INCLUDES_DolbyVision),true)
 # Dolby vision Proprietary blobs
 PRODUCT_COPY_FILES += \
     $(DOLBY_PATH)/proprietary/vendor/etc/dolby_vision.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/dolby_vision.cfg \
@@ -195,4 +198,5 @@ PRODUCT_PACKAGES += \
 # Shim
 PRODUCT_PACKAGES += \
     libcodec2_hidl_shim.vendor
+endif
 
