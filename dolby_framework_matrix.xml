@@ -16,4 +16,12 @@
             <instance>dolby</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.dolby.dvs</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDvs</name>
+            <instance>dvs-hal-service</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>

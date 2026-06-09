@@ -1328,3 +1328,71 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
+cc_prebuilt_library_shared {
+    name: "vendor.dolby.dvs@1.0",
+    owner: "xiaomi",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.dolby.dvs@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
+    name: "vendor.dolby.media.dvs-service.xml",
+    owner: "xiaomi",
+    src: "proprietary/vendor/etc/vintf/manifest/vendor.dolby.media.dvs-service.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "dvs-hal-service",
+    owner: "xiaomi",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/hw/dvs-hal-service",
+            ],
+            shared_libs: [
+                "vendor.dolby.dvs@1.0",
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libbinder",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
