@@ -184,6 +184,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libstagefright_foundation-swiitchoff
 
+PRODUCT_COPY_FILES += \
+    $(DOLBY_PATH)/proprietary/vendor/etc/init/vendor.dolby.media.dvs-service-vision.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.dolby.media.dvs-service-vision.rc
+
+PRODUCT_PACKAGES += \
+    vendor.dolby.dvs@1.0 \
+    vendor.dolby.media.dvs-service.xml \
+    dvs-hal-service
+
 # Shim
 PRODUCT_PACKAGES += \
     libcodec2_hidl_shim.vendor
