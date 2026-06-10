@@ -43,18 +43,26 @@ The only change done above is changing := symbol to += so that manifest can't be
 
 At the end an example commit to properly implement it in your device tree could be :-
 
-[**1**] https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/e2333c94444b2646810cca39926f2df6bb95443c
+**1)** [**Enable Dolby Atmos**](https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/e2333c94444b2646810cca39926f2df6bb95443c)
+**or**
+[**Enable Dolby Atmos**](https://github.com/swiitchOFF-miatoll/device_xiaomi_sm6250-common/commit/cfb88813114c6b0b16860ca29c04319418fbec93)
 
-[**2 For Spatial Audio**] https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/035849721cacf5746bc554407ae2ae7c12edd865
+**2)** [**Enable Spatial Audio**](https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/035849721cacf5746bc554407ae2ae7c12edd865)
 
-[**3 Enable Dolby Vision**] https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/97e6c84e3e2390c7fa8acecc3cdedd70b5aed07d
-
-[**4 Disable Dolby Vision**] https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/41411ab3e6caabe8a304b03d6badcd8bf2211adb
+**3)** [**Enable Dolby Vision**](https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/97e6c84e3e2390c7fa8acecc3cdedd70b5aed07d)
+**or**
+[**Enable Dolby Vision**](https://github.com/swiitchOFF-miatoll/device_xiaomi_sm6250-common/commit/361a3c11663257999e21cb02eee9530bfec16f33)
+**or**
+[**Disable Dolby Vision**](https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/41411ab3e6caabe8a304b03d6badcd8bf2211adb)
  
-#### Tip pick anyone for Reference:
-          https://dumps.tadiphone.dev/dumps/xiaomi/vili/-/blob/missi_phone_global-user-14-UKQ1.231207.002-V816.0.5.0.UKDMIXM-release-keys/aosp-device-tree/proprietary-files.txt#L2072
-          https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/6a8f6aae347f9f864f17f2dfa5d541f83ab5b170
-          https://github.com/Spanish-or-Vanish/android_device_xiaomi_sm8350-common/commit/5c593cbd2c19d571b7e62ea4bd6b8c864a4e1d9e
+**Note: Flags are needed after** [**this**](https://github.com/swiitch-OFF-Lab/hardware_dolby/commit/a29e40ab583f40893552d917c6d4deddac125b01)
+
+**>** [**For OEM Dolby App**](https://github.com/swiitchOFF-miatoll/device_xiaomi_miatoll/commit/7799b7b654dde27862062d5b44d7e58407a0e94b) `TARGET_INCLUDES_OEM_App := true`
+
+**>** **For OSS Dolby App** [**Need this**](https://github.com/swiitch-OFF-Lab/packages_apps_DolbyUI/tree/a) **or** [**Need this**](https://github.com/swiitch-OFF-Lab/packages_apps_DolbyUI/tree/16.0) **and skip/ignore/don't use OEM Dolby App flag**
+
+**>** [**For Dolby Vision**](https://github.com/swiitchOFF-miatoll/device_xiaomi_miatoll/commit/5031c093bfeb5dcd86b45c114c12a4e626fcb48f) `TARGET_INCLUDES_DolbyVision := true`
+
 
 # Credits:
  * [**HELLBOY017**](https://github.com/HELLBOY017)
