@@ -1,0 +1,21 @@
+type hal_dvs_default, domain;
+type hal_dvs_default_exec, exec_type, file_type, vendor_file_type;
+type hal_dvs_service, hal_service_type, service_manager_type;
+
+allow hal_dvs_client hal_dvs_server:binder { call transfer };
+allow hal_dvs_client hal_dvs_server:binder transfer;
+allow hal_dvs_client hal_dvs_server:fd *;
+allow hal_dvs_client hal_dvs_service:service_manager find;
+allow hal_dvs_server hal_dvs_client:binder transfer;
+allow hal_dvs_server hal_dvs_client:binder { call transfer };
+allow hal_dvs_server hal_dvs_client:fd *;
+allow hal_dvs_default hal_dvs_service:service_manager { add find };
+allow hal_dvs_default system_server:binder { call transfer };
+allow hal_dvs_default fwk_sensor_hwservice:hwservice_manager find;
+allow hal_dvs_default fwk_sensor_service:service_manager find;
+allow hal_dvs_default vendor_sysfs_graphics:dir { open read search };
+allow hal_dvs_default vendor_sysfs_graphics:file { getattr open read };
+init_daemon_domain(hal_dvs_default)
+set_prop(hal_dvs_server, vendor_dolbyv_prop)
+binder_use(hal_dvs_default)
+hal_server_domain(hal_dvs_default, hal_dvs)

@@ -1,0 +1,5 @@
+hal_client_domain(hal_audio_default, hal_dms)
+
+# Allow Audio hal to find hal_dms_hwservice
+binder_call(hal_audio_default, hal_dms_default)
+allow hal_audio_default hal_dms_hwservice:hwservice_manager find;
