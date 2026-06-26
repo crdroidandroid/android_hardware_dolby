@@ -1,0 +1,3 @@
+# Dolby Vision
+persist.vendor.dolbyv.                          u:object_r:vendor_dolbyv_prop:s0
+vendor.dolbyv.                                  u:object_r:vendor_dolbyv_prop:s0
