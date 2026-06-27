@@ -34,18 +34,19 @@ prebuilt_etc_xml {
 }
 
 cc_prebuilt_library_shared {
-    name: "aoc_audio_stereo_spatializer",
-    owner: "google",
+    name: "libdapparamstorage-spatial",
+    owner: "dolby",
     strip: {
         none: true,
     },
     target: {
         android_arm: {
             srcs: [
-                "proprietary/vendor/lib/aoc_audio_stereo_spatializer.so",
+                "proprietary/vendor/lib/libdapparamstorage-spatial.so",
             ],
             shared_libs: [
-                "libbase",
+                "libcutils",
+                "libutils",
                 "liblog",
                 "libc++",
                 "libc",
@@ -55,10 +56,11 @@ cc_prebuilt_library_shared {
         },
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/aoc_audio_stereo_spatializer.so",
+                "proprietary/vendor/lib64/libdapparamstorage-spatial.so",
             ],
             shared_libs: [
-                "libbase",
+                "libcutils",
+                "libutils",
                 "liblog",
                 "libc++",
                 "libc",
@@ -73,18 +75,60 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libspatialaudio",
-    owner: "google",
+    name: "libspatializerparamstorage",
+    owner: "dolby",
     strip: {
         none: true,
     },
     target: {
         android_arm: {
             srcs: [
-                "proprietary/vendor/lib/soundfx/libspatialaudio.so",
+                "proprietary/vendor/lib/libspatializerparamstorage.so",
             ],
             shared_libs: [
-                "libaudioutils",
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libspatializerparamstorage.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libstagefright_foundation-spatial",
+    owner: "dolby",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/libstagefright_foundation-spatial.so",
+            ],
+            shared_libs: [
+                "libbinder",
+                "libutils",
                 "libcutils",
                 "liblog",
                 "libc++",
@@ -95,10 +139,11 @@ cc_prebuilt_library_shared {
         },
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/soundfx/libspatialaudio.so",
+                "proprietary/vendor/lib64/libstagefright_foundation-spatial.so",
             ],
             shared_libs: [
-                "libaudioutils",
+                "libbinder",
+                "libutils",
                 "libcutils",
                 "liblog",
                 "libc++",
@@ -109,7 +154,109 @@ cc_prebuilt_library_shared {
         },
     },
     compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libswspatializer",
+    owner: "dolby",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/soundfx/libswspatializer.so",
+            ],
+            shared_libs: [
+                "libdlbvol",
+                "libswdap",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libaudioutils",
+                "libdapparamstorage-spatial",
+                "libspatializerparamstorage",
+                "libhidlbase",
+                "libstagefright_foundation-spatial",
+                "libdlbpreg",
+                "vendor.dolby.hardware.dms@2.0-spatial",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/soundfx/libswspatializer.so",
+            ],
+            shared_libs: [
+                "libdlbvol",
+                "libswdap",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libaudioutils",
+                "libdapparamstorage-spatial",
+                "libspatializerparamstorage",
+                "libhidlbase",
+                "libstagefright_foundation-spatial",
+                "libdlbpreg",
+                "vendor.dolby.hardware.dms@2.0-spatial",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
     relative_install_path: "soundfx",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.dolby.hardware.dms@2.0-spatial",
+    owner: "dolby",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm: {
+            srcs: [
+                "proprietary/vendor/lib/vendor.dolby.hardware.dms@2.0-spatial.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.dolby.hardware.dms@2.0-spatial.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "both",
     prefer: true,
     soc_specific: true,
 }

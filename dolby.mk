@@ -58,15 +58,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     DolbyFrameworksResCommon
 
-# Spatial Audio
+# Dolby Spatial Audio
 PRODUCT_COPY_FILES += \
-    $(DOLBY_PATH)/configs/android.hardware.sensor.dynamic.head_tracker.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.dynamic.head_tracker.xml \
+    $(DOLBY_PATH)/configs/android.hardware.sensor.dynamic.head_tracker.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.dynamic.head_tracker.xml
 
-# Spatial Audio: optimize spatializer effect
+# Dolby Spatial Audio: optimize spatializer effect
 PRODUCT_VENDOR_PROPERTIES += \
        audio.spatializer.effect.util_clamp_min=300
 
-# Spatial Audio: declare use of spatial audio
+# Dolby Spatial Audio: declare use of spatial audio
 PRODUCT_VENDOR_PROPERTIES += \
        ro.audio.spatializer_enabled=true \
        ro.audio.headtracking_enabled=true \
@@ -74,10 +74,13 @@ PRODUCT_VENDOR_PROPERTIES += \
        ro.audio.stereo_spatialization_enabled=true \
        persist.vendor.audio.spatializer.speaker_enabled=true
 
-# Spatial Audio Proprietary blobs
+# Dolby Spatial Audio Proprietary blobs
 PRODUCT_PACKAGES += \
-    aoc_audio_stereo_spatializer \
-    libspatialaudio
+    libdapparamstorage-spatial \
+    libspatializerparamstorage \
+    libstagefright_foundation-spatial \
+    libswspatializer \
+    vendor.dolby.hardware.dms@2.0-spatial
 
 # Media (C2)
 PRODUCT_PACKAGES += \
