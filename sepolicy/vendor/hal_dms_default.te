@@ -13,4 +13,4 @@ unix_socket_connect(hal_dms_default, property, init)
 binder_call(hal_dms_default, hal_audio_default)
 binder_call(hal_dms_default, platform_app)
 
-get_prop(hal_dms_default, vendor_audio_prop);
+get_prop(hal_dms_default, vendor_mtk_audio_prop);
