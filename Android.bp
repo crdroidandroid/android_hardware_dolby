@@ -13,6 +13,9 @@
 // limitations under the License.
 
 soong_namespace {
+    imports: [
+        "vendor/motorola/sm8550-common",
+    ],
 }
 
 prebuilt_etc_xml {
@@ -56,41 +59,6 @@ cc_prebuilt_library_shared {
 }
 
 android_app_import {
-	name: "MotoSignatureApp",
-	owner: "xiaomi",
-	apk: "proprietary/system_ext/app/MotoSignatureApp/MotoSignatureApp.apk",
-	certificate: "platform",
-	dex_preopt: {
-		enabled: false,
-	},
-	system_ext_specific: true,
-}
-
-android_app_import {
-	name: "MotoDolbyDax3",
-	owner: "xiaomi",
-	apk: "proprietary/system_ext/priv-app/MotoDolbyDax3/MotoDolbyDax3.apk",
-	certificate: "platform",
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
-	system_ext_specific: true,
-}
-
-android_app_import {
-	name: "MotorolaSettingsProvider",
-	owner: "xiaomi",
-	apk: "proprietary/system_ext/priv-app/MotorolaSettingsProvider/MotorolaSettingsProvider.apk",
-	certificate: "platform",
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
-	system_ext_specific: true,
-}
-
-android_app_import {
 	name: "daxService",
 	owner: "xiaomi",
 	apk: "proprietary/system_ext/priv-app/daxService/daxService.apk",
@@ -110,23 +78,9 @@ dex_import {
 }
 
 dex_import {
-	name: "com.motorola.motosignature",
-	owner: "xiaomi",
-	jars: ["proprietary/system_ext/framework/com.motorola.motosignature.jar"],
-	system_ext_specific: true,
-}
-
-dex_import {
 	name: "moto-checkin",
 	owner: "xiaomi",
 	jars: ["proprietary/system_ext/framework/moto-checkin.jar"],
-	system_ext_specific: true,
-}
-
-dex_import {
-	name: "moto-settings",
-	owner: "xiaomi",
-	jars: ["proprietary/system_ext/framework/moto-settings.jar"],
 	system_ext_specific: true,
 }
 
@@ -135,47 +89,6 @@ dex_import {
 	owner: "xiaomi",
 	jars: ["proprietary/system_ext/framework/moto.jar"],
 	system_ext_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libdapparamstorage",
-    owner: "xiaomi",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libdapparamstorage.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libdapparamstorage.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    soc_specific: true,
 }
 
 cc_prebuilt_library_shared {
